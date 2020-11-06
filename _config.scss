@@ -1,0 +1,86 @@
+/* htmlの基底フォントサイズを10pxに ===============*/
+html {
+  font-size: 62.5%; /* -> 10px; */
+}
+
+/* 主要な色 ======================================*/
+$color-black-light:#282F35;
+$color-black-dark: #171717;
+$color-yellow: #F7D43F;
+
+/* フォント =====================================*/
+$font-family-jp: 'Noto Serif JP', sans-serif;
+$font-family-en: 'Noto Serif', serif;
+
+
+/* 主要な幅 ====================================*/
+
+// メディアクエリ用
+$xs: 54.4em; 
+$sm: 76.8em;
+$md: 99.2em;
+$lg: 120em;
+
+// PCサイズ======================/
+// PCサイズよく使うpadding値
+$padding: 12rem;
+// PCサイズのコンテンツ最大幅
+$max-width:120rem; //1030px
+
+//  sp(smart phone)サイズ ========/
+// PCサイズよく使うpadding値
+$padding-sp: 1.5rem;
+
+/* レスポンシブル ==========================================*/
+// smart phone サイズ
+@mixin sp {
+  @media screen and (max-width: $xs) {
+    @content;
+  }
+}
+
+/* 文字スタイル ==========================================*/
+// paddingなど構成に影響する要素は入れない
+@mixin title($color) {
+	display: flex;	//疑似要素を機能させるため
+	align-items: center;
+	font-family: $font-family-en;
+	font-size: 6rem;
+	font-weight: bold;
+	font-style: italic;
+	letter-spacing: 0.05em;
+	// line-height: 8.4rem;
+	color: $color;
+	@include sp {
+		font-size: 3rem;
+		// line-height: 4.2rem;
+	}
+	&::after {
+		width:20rem;
+		margin-left: 3.3rem;
+		border-top: 5px solid $color;
+		content: "";
+		@include sp {
+			width: 9rem;
+		}
+	}
+}
+
+@mixin background-text($color) {
+	font-family: $font-family-en;
+	font-size: 9rem;
+	font-weight: bold;
+	letter-spacing: 0.05em;
+	// line-height: 11.9rem;;
+	color: $color;
+	@include sp {
+		font-size: 4rem;;
+	}
+}
+
+
+/* その他クラス ==========================================*/
+// ポップアップ等表示中に裏側の要素をスクロールロックする
+.scroll-lock {
+	overflow: hidden;
+}

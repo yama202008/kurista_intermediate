@@ -1,0 +1,593 @@
+// ファイル読み込み
+@import 'reset';
+@import 'config';
+
+
+/* 共通のクラス ===============================================*/
+/* header */
+.header {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 90;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 2.4rem $padding ;
+  @include sp {
+    padding: 3rem $padding-sp;
+  }
+  &__icon {
+    font-family: $font-family-en;
+    font-size: 2.6rem;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 0.05rem;
+    color: white;
+  }
+  &__list {
+    display: flex;
+    padding-top: .7rem;
+    @include sp {
+      display: none;
+    }
+  }
+  &__link {
+    padding-right: 3rem;
+    font-family: $font-family-en;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 0.05rem;
+    color: white;
+    &:last-child{
+      padding-right: 0;;
+    }
+  }
+  &__humberger {
+    display: none;
+    @include sp {
+      display: block;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/* humberger-menu */
+.humberger-menu {
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-black-light;
+  &__close-button {
+    position: absolute;
+    top: 3rem;
+    right: $padding-sp;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__link {
+    padding-bottom: 3rem;
+    text-align: center;
+    font-family: $font-family-en;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 0.05rem;
+    color: white;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  &__text {
+    padding: 3rem 0;
+    text-align: center;
+    font-family: $font-family-en;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+  }
+}
+
+
+/* index.html ================================================*/
+/* jumbotron */
+.jumbotron {
+  max-width: 144rem;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  &__slider {
+    display: flex;
+    position: relative;
+    z-index: -1;
+    width: 400%;
+    height: 75.2rem;
+    animation: 25s slidy infinite; 
+    @include sp {
+      height: 59.9rem;
+    }
+  }
+  &__slider-item {
+    display: block;
+    width: 25%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  &__text-en {
+    position: absolute;
+    top: 40.9rem;
+    left: $padding;
+    font-family: $font-family-en;
+    font-size: 7rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    color: white;
+    @include sp {
+      top: 20.2rem;
+      left: 50%;
+      width: 100%;
+      text-align: center;
+      transform: translate(-50%, 0);
+      font-size: 3.6rem;
+    }
+  }
+  &__text-jp {
+    position: absolute;
+    top: 52.7rem;
+    left: 18rem;
+    font-family: $font-family-jp;
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    color: white;
+    @include sp {
+      top: 30.6rem;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, 0);
+      text-align: center;
+      font-size: 3rem;
+      line-height: 5rem;
+    }
+  }
+  &__br-sp {
+    display: none;
+    @include sp {
+      display: block;
+    }
+  }
+}
+
+@keyframes slidy {
+  0% { left: 0%; }
+  27% { left: 0%; }
+  32% { left: -100%; }
+  59% { left: -100%; }
+  64% { left: -200%; }
+  91% { left: -200%; }
+  96% { left: -300%; }
+}
+
+.jumbotron-slider {
+  &__image1 {
+    background-image: url("img/fv-bgi_01@2x.jpg");
+  }
+  &__image2{
+    background-image: url("img/fv-bgi_02@2x.jpg");
+  }
+  &__image3{
+    background-image: url("img/fv-bgi_03@2x.jpg");
+  }
+}
+
+
+/* concept */
+.concept {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 10rem;
+  @include sp {
+    padding: 0 $padding-sp;
+  }
+  &__title {
+    padding: 10rem 0 7rem;
+    @include sp {
+      padding-bottom: 5.1rem; 
+    }
+    @include title($color-black-light)
+  }
+  &__sub-title {
+    padding-bottom: 7rem;
+    text-align: center;
+    font-family: $font-family-jp;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    line-height: 5rem;
+    color: $color-black-dark;
+    @include sp {
+      padding-bottom: 3.1rem;
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+  }
+  &__br {
+    display: block;
+    @include sp {
+      display: none;
+    }
+  }
+  &__br-sp {
+    display: none;
+    @include sp {
+      display: block;
+    }
+  }
+  &__flex {
+    display: flex;
+    padding-bottom: 13.5rem;
+    @include sp {
+      flex-wrap: wrap;
+    }
+  }
+  &__text {
+    width: 56%;
+    padding: 4.7rem 12% 0 0 ;
+    font-family: $font-family-jp;
+    font-size: 1.6rem;
+    letter-spacing: 0.05rem;
+    line-height: 3rem;
+    color: $color-black-dark;
+    @include sp {
+      width: 100%;
+      padding: 0 $padding-sp 6rem;
+      text-align: justify;
+    }
+  }
+  &__img{
+    width: 44%;
+    object-fit: contain;
+    @include sp {
+      width: 100%;
+    }
+  }
+  &__background-text {
+    margin-right: -10rem;
+    padding-bottom: 7rem;
+    text-align: right;
+    @include background-text($color-black-dark)
+    opacity: .05;
+    @include sp {
+      margin-right: 0;
+      padding: 0 0 6.4rem;
+    }
+  }
+}
+
+/* works */
+.works {
+  max-width: 144rem;
+  margin: 0 auto;
+  background-image: url("img/works-bgi@2x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include sp {
+    padding: 0 $padding-sp;
+  }
+  &__title {
+    padding: 10.4rem $padding 8rem 0;
+    justify-content: flex-end;
+    @include sp {
+      padding: 10rem 0 5rem;
+    }
+    @include title(white);
+  }
+  &__flex {
+    display: flex;
+    box-sizing: content-box;
+    max-width: 100rem;;
+    padding: 0 22rem 8rem;
+    @include sp {
+      flex-wrap: wrap;
+      padding: 0 1.3rem 8rem;
+    }
+  }
+  &__item {
+    width: 34%;
+    margin-right: 2%;
+    @include sp {
+      width: 100%;
+      margin: 0 0 3rem;
+    }
+    &:last-child {
+      width: 32%;
+      margin-right: 0;
+      @include sp {
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__button {
+    display: block;
+    padding: 1.8rem 7.1rem;
+    margin: 0 auto;
+    border-radius: 3rem;
+    background-color: $color-yellow;
+    font-family: $font-family-en;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    color: $color-black-dark;
+    box-shadow: 0 0 6px #1B1310;
+  }
+  &__background-text {
+    padding: 7rem 0 7rem $padding;
+    @include background-text(white);
+    opacity: .1;
+    @include sp {
+      padding: 4rem 0;
+    }
+  }
+}
+
+.works-card {
+  background-color: white;
+  box-shadow: 0 0 6px black;
+  &__img {
+    width: 100%;
+  }
+  &__text { 
+    padding: 2.5rem 2rem;
+    font-family: $font-family-jp;
+    font-size: 1.6rem;
+    letter-spacing: 0.05rem;
+    line-height: 3rem;
+    color: $color-black-dark;
+  }
+}
+
+/* Service */
+.service {
+  width: 100%;
+  max-width: 144rem;
+  margin: 0 auto;
+  // @include sp {
+  //   padding: 0 $padding-sp;
+  // }
+  &__title {
+    padding: 10rem $padding-sp 8rem 22rem;
+    @include title($color-black-light);
+    @include sp {
+      padding: 10rem 0 8rem;
+    }
+  }
+  &__flex {
+    width: 100%;
+    display: flex;
+    padding-bottom: 7rem;
+    @include sp {
+      flex-wrap: wrap;
+      padding-bottom: 4rem;
+    }
+  }
+  &__link {
+    width: 33.3%;
+    @include sp {
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+    &::last-child {
+      @include sp {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__background-text {
+    padding: 0 12rem 7rem 0 ;
+    text-align: right;
+    @include background-text($color-black-dark)
+    opacity: .05;
+    @include sp {
+      padding: 0 $padding-sp 6.4rem 0;
+    }
+  }
+}
+
+.service-card {
+  position: relative;
+  &__img {
+    width: 100%;
+  }
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: $font-family-en;
+    font-size: 4rem;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 0.05rem;
+    color: white;
+  }
+} 
+
+/* Contact */
+.contact {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 0 $padding;
+  background-image: url("img/contact-bgi@2x.jpg");
+  @include sp {
+    padding: 0 $padding-sp;
+  }
+  &__title {
+    padding: 10.9rem 0 8rem;
+    justify-content: flex-end;
+    @include title(white);
+  }
+  &__text {
+    padding-bottom: 4rem;
+    text-align: center;
+    font-family: $font-family-jp;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    color: white;
+    @include sp {
+      padding-bottom: 3rem;
+    }
+  }
+  &__button {
+    display: block;
+    padding: 1.8rem 7.1rem;
+    margin: 0 auto;
+    border-radius: 3rem;
+    background-color: $color-yellow;
+    font-family: $font-family-en;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    color: $color-black-dark;
+    box-shadow: 0 0 6px #1B1310;
+  }
+  &__background-text {
+    padding: 7rem 0;
+    @include background-text(white);
+    opacity: .1;
+    @include sp {
+      padding: 4rem 0;
+    }
+  }
+}
+
+/* contact.html =================================================*/
+/* contact-jumbotron */
+.contact-jumbotron {
+  max-width: 144rem;
+  margin: 0 auto;
+  background-image: url("img/contact-page-bgi@2x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  @include sp {
+    padding: 0 $padding-sp;
+  }
+  &__title {
+    padding: 18.6rem 0 1.5rem;
+    text-align: center;
+    font-family: $font-family-en;
+    font-size: 6rem;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    // line-height: 8.4rem;
+    color: white;
+    @include sp {
+      padding: 17.5rem 0 4rem;
+      font-size: 3rem;
+    }
+  }
+  &__background-text {
+    padding: 0 0 4rem 4.8rem;
+    @include background-text(white);
+    opacity: .1;
+    @include sp {
+      padding: 0 0 4rem;
+    }
+  }
+}
+
+/* contact-form */
+.contact-form {
+  max-width: 70rem;
+  padding-top: 9.7rem;
+  margin: 0 auto;
+  @include sp {
+    padding: 9.7rem $padding-sp 0;
+  }
+  &__label {
+    margin-bottom: .5rem;
+    font-family: $font-family-jp;
+    font-size: 1.6rem;
+    letter-spacing: 0.05rem;
+    line-height: 3rem;
+  }
+  &__flex {
+    display: flex;
+    padding-bottom: 2.2rem;
+    @include sp {
+      flex-wrap: wrap;
+    } 
+  }
+  &__choice {
+    padding: 0 2rem 0 1rem;
+    font-family: $font-family-jp;
+    font-size: 1.6rem;
+    letter-spacing: 0.05rem;
+    @include sp {
+      width: 100%;
+      padding-bottom: .5rem;
+    }
+  }
+  &__checkbox {
+    vertical-align: middle;
+  }
+  &__name {
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 2.2rem;
+    outline: 1px solid #141414;
+  }
+  &__tel {
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 2.2rem;
+    outline: 1px solid #141414;
+  }
+  &__mail {
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 2.2rem;
+    outline: 1px solid #141414;
+  }
+  &__text {
+    width: 100%;
+    height: 17.1rem;
+    margin-bottom: 8rem;
+    outline: 1px solid #141414;
+  }
+  &__submit {
+    display: block;
+    padding: 1.8rem 7.1rem;
+    margin: 0 auto 8rem;
+    border-radius: 3rem;
+    background-color: $color-yellow;
+    font-family: $font-family-en;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    color: $color-black-dark;
+    box-shadow: 0 0 6px #1B1310;
+  }
+}
