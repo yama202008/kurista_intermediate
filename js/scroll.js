@@ -39,8 +39,10 @@ $(function(){
 $(window).scroll(function(){
   var scrollJumbotron = $('.jumbotron').offset().top + $('.jumbotron').height(); // ターゲットの位置取得
   if($(window).scrollTop() > scrollJumbotron){ //jumbotronが画面外になったら
+    $('.header').css('position', 'fixed'); // 背景固定
     $('.header').css('background-color', '#282F35'); // 背景色付与
   }else{
+    $('.header').css('position', 'absolute'); // 背景上部に
     $('.header').css('background-color', ''); // 背景色無効
   }
 })

@@ -497,7 +497,7 @@ html {
 /* 共通のクラス ===============================================*/
 /* header */
 .header {
-  position: fixed;
+  position: absolute;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
@@ -512,6 +512,8 @@ html {
   max-width: 144rem;
   margin: 0 auto;
   padding: 2.4rem 12rem;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
 }
 
 @media screen and (max-width: 54.4em) {
@@ -764,15 +766,15 @@ html {
 }
 
 .jumbotron-slider__image1 {
-  background-image: url("img/fv-bgi_01@2x.jpg");
+  background-image: url("../img/fv-bgi_01@2x.jpg");
 }
 
 .jumbotron-slider__image2 {
-  background-image: url("img/fv-bgi_02@2x.jpg");
+  background-image: url("../img/fv-bgi_02@2x.jpg");
 }
 
 .jumbotron-slider__image3 {
-  background-image: url("img/fv-bgi_03@2x.jpg");
+  background-image: url("../img/fv-bgi_03@2x.jpg");
 }
 
 /* concept */
@@ -941,7 +943,7 @@ html {
 .works {
   max-width: 144rem;
   margin: 0 auto;
-  background-image: url("img/works-bgi@2x.jpg");
+  background-image: url("../img/works-bgi@2x.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1202,6 +1204,16 @@ html {
   position: relative;
 }
 
+.service-card:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(23, 23, 23, 0.3);
+}
+
 .service-card__img {
   width: 100%;
 }
@@ -1225,7 +1237,7 @@ html {
   max-width: 144rem;
   margin: 0 auto;
   padding: 0 12rem;
-  background-image: url("img/contact-bgi@2x.jpg");
+  background-image: url("../img/contact-bgi@2x.jpg");
 }
 
 @media screen and (max-width: 54.4em) {
@@ -1325,12 +1337,12 @@ html {
   }
 }
 
-/* contact.html =================================================*/
+/* contact/index.html =================================================*/
 /* contact-jumbotron */
 .contact-jumbotron {
   max-width: 144rem;
   margin: 0 auto;
-  background-image: url("img/contact-page-bgi@2x.jpg");
+  background-image: url("../img/contact-page-bgi@2x.jpg");
   background-repeat: no-repeat;
   background-position: center;
 }
