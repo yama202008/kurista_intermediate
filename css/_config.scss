@@ -9,9 +9,9 @@ $color-black-dark: #171717;
 $color-yellow: #F7D43F;
 
 /* フォント =====================================*/
-$font-family-jp: 'Noto Serif JP', sans-serif;
-$font-family-en: 'Noto Serif', serif;
-
+// 英文フォント,和文フォントで指定しておくことで
+// 英文フォントに和文フォントはないため、自動的に和文フォントになる
+$font-family: 'Noto Serif', 'Noto Serif JP', serif;
 
 /* 主要な幅 ====================================*/
 
@@ -44,7 +44,7 @@ $padding-sp: 1.5rem;
 @mixin title($color) {
 	display: flex;	//疑似要素を機能させるため
 	align-items: center;
-	font-family: $font-family-en;
+	font-family: $font-family;
 	font-size: 6rem;
 	font-weight: bold;
 	font-style: italic;
@@ -56,9 +56,12 @@ $padding-sp: 1.5rem;
 		// line-height: 4.2rem;
 	}
 	&::after {
+		display: inline-block;
 		width:20rem;
+		height: .5rem;
 		margin-left: 3.3rem;
-		border-top: 5px solid $color;
+		background-color: $color;
+		vertical-align: middle; //inline-block+vertical-align:middleで上下センターぞろえ可 
 		content: "";
 		@include sp {
 			width: 9rem;
@@ -67,7 +70,7 @@ $padding-sp: 1.5rem;
 }
 
 @mixin background-text($color) {
-	font-family: $font-family-en;
+	font-family: $font-family;
 	font-size: 9rem;
 	font-weight: bold;
 	letter-spacing: 0.05em;

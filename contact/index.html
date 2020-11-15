@@ -5,40 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>クリ★スタ中級</title>
   <link rel="stylesheet" href="../css/stylesheet.css">
-  <link href=“https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Serif+JP&display=swap” rel=“stylesheet”>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- ヘッダー -->
   <header class="header">
-    <h1 class="header__icon"><a href="../index.html">Cresta Design</a></h1>
-    <nav class="header__nav">
-      <ul class="header__list">
-        <li class="header__link"><a href="#concept">Concept</a></li>
-        <li class="header__link"><a href="#service">Service</a></li>
-        <li class="header__link"><a href="#works">Works</a></li>
-        <li class="header__link"><a href="#">Contact</a></li>
-      </ul>
-      <svg class="header__humberger" xmlns="http://www.w3.org/2000/svg" width="30" height="23" viewBox="0 0 30 23">
-        <g id="humberger" transform="translate(-329.77 -49.742)">
-          <path id="パス_2" data-name="パス 2" d="M6688.77-1384.758h29.77" transform="translate(-6359 1436)" fill="none" stroke="#fffdfd" stroke-width="3"/>
-          <path id="パス_3" data-name="パス 3" d="M6688.77-1384.758h29.77" transform="translate(-6358.77 1446)" fill="none" stroke="#fffdfd" stroke-width="3"/>
-          <path id="パス_4" data-name="パス 4" d="M6688.77-1384.758h29.77" transform="translate(-6358.77 1456)" fill="none" stroke="#fff" stroke-width="3"/>
-        </g>
-      </svg>
-      <!-- ハンバーガーメニュー -->
-      <div class="header__humberger-menu humberger-menu" id="humberger-menu">
-        <svg  class="humberger-menu__close-button" id="close-button" xmlns="http://www.w3.org/2000/svg" width="23.335" height="23.335" viewBox="0 0 23.335 23.335">
-          <path id="パス_2" data-name="パス 2" d="M6688.771-1384.758h30" transform="translate(3772.777 -5707.786) rotate(135)" fill="none" stroke="#fffdfd" stroke-width="3"/>
-          <path id="パス_4" data-name="パス 4" d="M6688.771-1384.758h30" transform="translate(-5707.785 -3749.443) rotate(45)" fill="none" stroke="#fff" stroke-width="3"/>
-        </svg>  
-        <ul class="humberger-menu__list">
-          <li class="humberger-menu__link"><a href="#concept">Concept</a></li>
-          <li class="humberger-menu__link"><a href="#service">Service</a></li>
-          <li class="humberger-menu__link"><a href="#works">Works</a></li>
-          <li class="humberger-menu__link"><a href="#contact">Contact</a></li>
+    <div class="header__inner">
+      <h1 class="header__icon"><a href="../index.html">Cresta Design</a></h1>
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li class="header__link"><a href="#concept">Concept</a></li>
+          <li class="header__link"><a href="#service">Service</a></li>
+          <li class="header__link"><a href="#works">Works</a></li>
+          <li class="header__link"><a href="./contact/">Contact</a></li>
         </ul>
-      </div>
-    </nav>
+        <svg class="header__humberger" id="humberger" xmlns="http://www.w3.org/2000/svg" width="30" height="23" viewBox="0 0 30 23">
+          <g transform="translate(-329.77 -49.742)">
+            <path id="パス_2" data-name="パス 2" d="M6688.77-1384.758h29.77" transform="translate(-6359 1436)" fill="none" stroke="#fffdfd" stroke-width="3"/>
+            <path id="パス_3" data-name="パス 3" d="M6688.77-1384.758h29.77" transform="translate(-6358.77 1446)" fill="none" stroke="#fffdfd" stroke-width="3"/>
+            <path id="パス_4" data-name="パス 4" d="M6688.77-1384.758h29.77" transform="translate(-6358.77 1456)" fill="none" stroke="#fff" stroke-width="3"/>
+          </g>
+        </svg>
+      </nav>
+    </div>
+      <!-- ハンバーガーメニュー -->
+    <div class="header__humberger-menu humberger-menu" id="humberger-menu">
+      <svg  class="humberger-menu__close-button" id="close-button" xmlns="http://www.w3.org/2000/svg" width="23.335" height="23.335" viewBox="0 0 23.335 23.335">
+        <path id="パス_2" data-name="パス 2" d="M6688.771-1384.758h30" transform="translate(3772.777 -5707.786) rotate(135)" fill="none" stroke="#fffdfd" stroke-width="3"/>
+        <path id="パス_4" data-name="パス 4" d="M6688.771-1384.758h30" transform="translate(-5707.785 -3749.443) rotate(45)" fill="none" stroke="#fff" stroke-width="3"/>
+      </svg>  
+      <ul class="humberger-menu__list">
+        <li class="humberger-menu__link"><a href="#concept">Concept</a></li>
+        <li class="humberger-menu__link"><a href="#service">Service</a></li>
+        <li class="humberger-menu__link"><a href="#works">Works</a></li>
+        <li class="humberger-menu__link"><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </header>
   <main>
     <!-- コンタクト -->
@@ -76,7 +79,7 @@
   </main>
   <!-- フッター -->
   <footer class="footer">
-    <p class="footer__text">©︎cresta.design all rights reserved</p>
+    <small class="footer__text">&copy;cresta.design all rights reserved</small>
   </footer>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="../js/humberger.js"></script>

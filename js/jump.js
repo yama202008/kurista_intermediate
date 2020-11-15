@@ -8,7 +8,7 @@ $(function(){
     // ファイルパスを取得
     var path = location.pathname;
     // ファイルパスの最後尾ファイル名の部分を削除
-    var dir_path = path.split("/").reverse().slice(1).reverse().join("/");
+    var dir_path = path.split("/").reverse().slice(2).reverse().join("/");
     // console.log(dir_path);
     // index.htmlに値渡し、#もエンコード
     location.href = dir_path + '/index.html?name=' +   encodeURIComponent(href);

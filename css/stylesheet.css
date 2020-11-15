@@ -498,35 +498,37 @@ html {
 /* header */
 .header {
   position: absolute;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  top: 0;
+  left: 0;
   z-index: 90;
+  width: 100%;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+}
+
+.header__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
   max-width: 144rem;
   margin: 0 auto;
   padding: 2.4rem 12rem;
-  -webkit-transition-duration: .5s;
-          transition-duration: .5s;
 }
 
 @media screen and (max-width: 54.4em) {
-  .header {
+  .header__inner {
     padding: 3rem 1.5rem;
   }
 }
 
 .header__icon {
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 2.6rem;
   font-weight: bold;
-  font-style: italic;
+  font-style: italic0;
   letter-spacing: 0.05rem;
   color: white;
 }
@@ -546,7 +548,7 @@ html {
 
 .header__link {
   padding-right: 3rem;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 1.6rem;
   font-weight: bold;
   font-style: italic;
@@ -602,7 +604,7 @@ html {
 .humberger-menu__link {
   padding-bottom: 3rem;
   text-align: center;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 1.6rem;
   font-weight: bold;
   font-style: italic;
@@ -615,10 +617,10 @@ html {
 }
 
 /* Footer */
-.footer__text {
+.footer {
   padding: 3rem 0;
   text-align: center;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 1.4rem;
   font-weight: bold;
   letter-spacing: 0.05rem;
@@ -627,8 +629,9 @@ html {
 /* index.html ================================================*/
 /* jumbotron */
 .jumbotron {
-  max-width: 144rem;
   width: 100%;
+  height: 100vh;
+  min-height: 55rem;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -640,15 +643,9 @@ html {
   position: relative;
   z-index: -1;
   width: 400%;
-  height: 75.2rem;
+  height: 100%;
   -webkit-animation: 25s slidy infinite;
           animation: 25s slidy infinite;
-}
-
-@media screen and (max-width: 54.4em) {
-  .jumbotron__slider {
-    height: 59.9rem;
-  }
 }
 
 .jumbotron__slider-item {
@@ -660,11 +657,26 @@ html {
   background-size: cover;
 }
 
-.jumbotron__text-en {
+.jumbotron__main-copy {
   position: absolute;
-  top: 40.9rem;
+  width: 100%;
+  bottom: 17.2rem;
   left: 12rem;
-  font-family: "Noto Serif", serif;
+}
+
+@media screen and (max-width: 54.4em) {
+  .jumbotron__main-copy {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+.jumbotron__text-en {
+  padding-bottom: 2.4rem;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 7rem;
   font-weight: bold;
   letter-spacing: 0.05rem;
@@ -673,21 +685,15 @@ html {
 
 @media screen and (max-width: 54.4em) {
   .jumbotron__text-en {
-    top: 20.2rem;
-    left: 50%;
-    width: 100%;
+    padding-bottom: 5.4rem;
     text-align: center;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
     font-size: 3.6rem;
   }
 }
 
 .jumbotron__text-jp {
-  position: absolute;
-  top: 52.7rem;
-  left: 18rem;
-  font-family: "Noto Serif JP", sans-serif;
+  padding-left: 6rem;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 4rem;
   font-weight: bold;
   letter-spacing: 0.05rem;
@@ -696,11 +702,7 @@ html {
 
 @media screen and (max-width: 54.4em) {
   .jumbotron__text-jp {
-    top: 30.6rem;
-    left: 50%;
-    width: 100%;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
+    padding-left: 0;
     text-align: center;
     font-size: 3rem;
     line-height: 5rem;
@@ -778,14 +780,14 @@ html {
 }
 
 /* concept */
-.concept {
+.concept__inner {
   max-width: 120rem;
   margin: 0 auto;
   padding: 0 10rem;
 }
 
 @media screen and (max-width: 54.4em) {
-  .concept {
+  .concept__inner {
     padding: 0 1.5rem;
   }
 }
@@ -798,7 +800,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 6rem;
   font-weight: bold;
   font-style: italic;
@@ -819,9 +821,12 @@ html {
 }
 
 .concept__title::after {
+  display: inline-block;
   width: 20rem;
+  height: .5rem;
   margin-left: 3.3rem;
-  border-top: 5px solid #282F35;
+  background-color: #282F35;
+  vertical-align: middle;
   content: "";
 }
 
@@ -834,7 +839,7 @@ html {
 .concept__sub-title {
   padding-bottom: 7rem;
   text-align: center;
-  font-family: "Noto Serif JP", sans-serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 3rem;
   font-weight: bold;
   letter-spacing: 0.05em;
@@ -881,13 +886,14 @@ html {
   .concept__flex {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    padding-bottom: 0;
   }
 }
 
 .concept__text {
   width: 56%;
   padding: 4.7rem 12% 0 0;
-  font-family: "Noto Serif JP", sans-serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 1.6rem;
   letter-spacing: 0.05rem;
   line-height: 3rem;
@@ -915,10 +921,11 @@ html {
 }
 
 .concept__background-text {
-  margin-right: -10rem;
+  max-width: 120rem;
+  margin: 0 auto;
   padding-bottom: 7rem;
   text-align: right;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 9rem;
   font-weight: bold;
   letter-spacing: 0.05em;
@@ -935,14 +942,12 @@ html {
 @media screen and (max-width: 54.4em) {
   .concept__background-text {
     margin-right: 0;
-    padding: 0 0 6.4rem;
+    padding: 4rem 0;
   }
 }
 
 /* works */
 .works {
-  max-width: 144rem;
-  margin: 0 auto;
   background-image: url("../img/works-bgi@2x.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -955,6 +960,8 @@ html {
 }
 
 .works__title {
+  max-width: 144rem;
+  margin: 0 auto;
   padding: 10.4rem 12rem 8rem 0;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -965,7 +972,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 6rem;
   font-weight: bold;
   font-style: italic;
@@ -986,9 +993,12 @@ html {
 }
 
 .works__title::after {
+  display: inline-block;
   width: 20rem;
+  height: .5rem;
   margin-left: 3.3rem;
-  border-top: 5px solid white;
+  background-color: white;
+  vertical-align: middle;
   content: "";
 }
 
@@ -1005,6 +1015,7 @@ html {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   max-width: 100rem;
+  margin: 0 auto;
   padding: 0 22rem 8rem;
 }
 
@@ -1046,18 +1057,28 @@ html {
   margin: 0 auto;
   border-radius: 3rem;
   background-color: #F7D43F;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 1.6rem;
   font-weight: bold;
   letter-spacing: 0.05rem;
   color: #171717;
   -webkit-box-shadow: 0 0 6px #1B1310;
           box-shadow: 0 0 6px #1B1310;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.works__button:hover {
+  opacity: .7;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .works__background-text {
+  max-width: 144rem;
+  margin: 0 auto;
   padding: 7rem 0 7rem 12rem;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 9rem;
   font-weight: bold;
   letter-spacing: 0.05em;
@@ -1085,11 +1106,12 @@ html {
 
 .works-card__img {
   width: 100%;
+  height: 20rem;
 }
 
 .works-card__text {
   padding: 2.5rem 2rem;
-  font-family: "Noto Serif JP", sans-serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 1.6rem;
   letter-spacing: 0.05rem;
   line-height: 3rem;
@@ -1099,11 +1121,11 @@ html {
 /* Service */
 .service {
   width: 100%;
-  max-width: 144rem;
-  margin: 0 auto;
 }
 
 .service__title {
+  max-width: 144rem;
+  margin: 0 auto;
   padding: 10rem 1.5rem 8rem 22rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1111,7 +1133,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 6rem;
   font-weight: bold;
   font-style: italic;
@@ -1126,9 +1148,12 @@ html {
 }
 
 .service__title::after {
+  display: inline-block;
   width: 20rem;
+  height: .5rem;
   margin-left: 3.3rem;
-  border-top: 5px solid #282F35;
+  background-color: #282F35;
+  vertical-align: middle;
   content: "";
 }
 
@@ -1172,15 +1197,17 @@ html {
 }
 
 @media screen and (max-width: 54.4em) {
-  .service__link::last-child {
+  .service__link:last-child {
     margin-bottom: 0;
   }
 }
 
 .service__background-text {
+  max-width: 144rem;
+  margin: 0 auto;
   padding: 0 12rem 7rem 0;
   text-align: right;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 9rem;
   font-weight: bold;
   letter-spacing: 0.05em;
@@ -1196,7 +1223,7 @@ html {
 
 @media screen and (max-width: 54.4em) {
   .service__background-text {
-    padding: 0 1.5rem 6.4rem 0;
+    padding: 0 1.5rem 4rem 0;
   }
 }
 
@@ -1204,7 +1231,14 @@ html {
   position: relative;
 }
 
-.service-card:hover::before {
+.service-card__anker {
+  display: block;
+  width: 100%;
+  line-height: 32rem;
+  z-index: 90;
+}
+
+.service-card__anker:hover::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1212,6 +1246,8 @@ html {
   width: 100%;
   height: 100%;
   background-color: rgba(23, 23, 23, 0.3);
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .service-card__img {
@@ -1224,7 +1260,9 @@ html {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-family: "Noto Serif", serif;
+  width: 100%;
+  text-align: center;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 4rem;
   font-weight: bold;
   font-style: italic;
@@ -1234,10 +1272,10 @@ html {
 
 /* Contact */
 .contact {
-  max-width: 144rem;
-  margin: 0 auto;
-  padding: 0 12rem;
   background-image: url("../img/contact-bgi@2x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 @media screen and (max-width: 54.4em) {
@@ -1247,7 +1285,9 @@ html {
 }
 
 .contact__title {
-  padding: 10.9rem 0 8rem;
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 10.9rem 12rem 8rem;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -1257,7 +1297,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 6rem;
   font-weight: bold;
   font-style: italic;
@@ -1272,9 +1312,12 @@ html {
 }
 
 .contact__title::after {
+  display: inline-block;
   width: 20rem;
+  height: .5rem;
   margin-left: 3.3rem;
-  border-top: 5px solid white;
+  background-color: white;
+  vertical-align: middle;
   content: "";
 }
 
@@ -1287,7 +1330,7 @@ html {
 .contact__text {
   padding-bottom: 4rem;
   text-align: center;
-  font-family: "Noto Serif JP", sans-serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 0.05rem;
@@ -1306,7 +1349,7 @@ html {
   margin: 0 auto;
   border-radius: 3rem;
   background-color: #F7D43F;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 1.6rem;
   font-weight: bold;
   letter-spacing: 0.05rem;
@@ -1316,8 +1359,10 @@ html {
 }
 
 .contact__background-text {
-  padding: 7rem 0;
-  font-family: "Noto Serif", serif;
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 7rem 12rem;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 9rem;
   font-weight: bold;
   letter-spacing: 0.05em;
@@ -1340,11 +1385,10 @@ html {
 /* contact/index.html =================================================*/
 /* contact-jumbotron */
 .contact-jumbotron {
-  max-width: 144rem;
-  margin: 0 auto;
   background-image: url("../img/contact-page-bgi@2x.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
 @media screen and (max-width: 54.4em) {
@@ -1354,9 +1398,11 @@ html {
 }
 
 .contact-jumbotron__title {
+  max-width: 144rem;
+  margin: 0 auto;
   padding: 18.6rem 0 1.5rem;
   text-align: center;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 6rem;
   font-weight: bold;
   font-style: italic;
@@ -1373,7 +1419,9 @@ html {
 
 .contact-jumbotron__background-text {
   padding: 0 0 4rem 4.8rem;
-  font-family: "Noto Serif", serif;
+  max-width: 144rem;
+  margin: 0 auto;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 9rem;
   font-weight: bold;
   letter-spacing: 0.05em;
@@ -1408,7 +1456,7 @@ html {
 
 .contact-form__label {
   margin-bottom: .5rem;
-  font-family: "Noto Serif JP", sans-serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 1.6rem;
   letter-spacing: 0.05rem;
   line-height: 3rem;
@@ -1430,7 +1478,7 @@ html {
 
 .contact-form__choice {
   padding: 0 2rem 0 1rem;
-  font-family: "Noto Serif JP", sans-serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 1.6rem;
   letter-spacing: 0.05rem;
 }
@@ -1480,7 +1528,7 @@ html {
   margin: 0 auto 8rem;
   border-radius: 3rem;
   background-color: #F7D43F;
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", "Noto Serif JP", serif;
   font-size: 1.6rem;
   font-weight: bold;
   letter-spacing: 0.05rem;

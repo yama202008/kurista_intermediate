@@ -5,40 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>クリ★スタ中級</title>
   <link rel="stylesheet" href="css/stylesheet.css">
-  <link href=“https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Serif+JP&display=swap” rel=“stylesheet”>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- ヘッダー -->
   <header class="header">
-    <h1 class="header__icon"><a href="index.html">Cresta Design</a></h1>
-    <nav class="header__nav">
-      <ul class="header__list">
-        <li class="header__link"><a href="#concept">Concept</a></li>
-        <li class="header__link"><a href="#service">Service</a></li>
-        <li class="header__link"><a href="#works">Works</a></li>
-        <li class="header__link"><a href="#contact">Contact</a></li>
-      </ul>
-      <svg class="header__humberger" id="humberger" xmlns="http://www.w3.org/2000/svg" width="30" height="23" viewBox="0 0 30 23">
-        <g transform="translate(-329.77 -49.742)">
-          <path id="パス_2" data-name="パス 2" d="M6688.77-1384.758h29.77" transform="translate(-6359 1436)" fill="none" stroke="#fffdfd" stroke-width="3"/>
-          <path id="パス_3" data-name="パス 3" d="M6688.77-1384.758h29.77" transform="translate(-6358.77 1446)" fill="none" stroke="#fffdfd" stroke-width="3"/>
-          <path id="パス_4" data-name="パス 4" d="M6688.77-1384.758h29.77" transform="translate(-6358.77 1456)" fill="none" stroke="#fff" stroke-width="3"/>
-        </g>
-      </svg>
-      <!-- ハンバーガーメニュー -->
-      <div class="header__humberger-menu humberger-menu" id="humberger-menu">
-        <svg  class="humberger-menu__close-button" id="close-button" xmlns="http://www.w3.org/2000/svg" width="23.335" height="23.335" viewBox="0 0 23.335 23.335">
-          <path id="パス_2" data-name="パス 2" d="M6688.771-1384.758h30" transform="translate(3772.777 -5707.786) rotate(135)" fill="none" stroke="#fffdfd" stroke-width="3"/>
-          <path id="パス_4" data-name="パス 4" d="M6688.771-1384.758h30" transform="translate(-5707.785 -3749.443) rotate(45)" fill="none" stroke="#fff" stroke-width="3"/>
-        </svg>  
-        <ul class="humberger-menu__list">
-          <li class="humberger-menu__link"><a href="#concept">Concept</a></li>
-          <li class="humberger-menu__link"><a href="#service">Service</a></li>
-          <li class="humberger-menu__link"><a href="#works">Works</a></li>
-          <li class="humberger-menu__link"><a href="#contact">Contact</a></li>
+    <div class="header__inner">
+      <h1 class="header__icon"><a href="index.html">Cresta Design</a></h1>
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li class="header__link"><a href="#concept">Concept</a></li>
+          <li class="header__link"><a href="#service">Service</a></li>
+          <li class="header__link"><a href="#works">Works</a></li>
+          <li class="header__link"><a href="./contact/">Contact</a></li>
         </ul>
-      </div>
-    </nav>
+        <svg class="header__humberger" id="humberger" xmlns="http://www.w3.org/2000/svg" width="30" height="23" viewBox="0 0 30 23">
+          <g transform="translate(-329.77 -49.742)">
+            <path id="パス_2" data-name="パス 2" d="M6688.77-1384.758h29.77" transform="translate(-6359 1436)" fill="none" stroke="#fffdfd" stroke-width="3"/>
+            <path id="パス_3" data-name="パス 3" d="M6688.77-1384.758h29.77" transform="translate(-6358.77 1446)" fill="none" stroke="#fffdfd" stroke-width="3"/>
+            <path id="パス_4" data-name="パス 4" d="M6688.77-1384.758h29.77" transform="translate(-6358.77 1456)" fill="none" stroke="#fff" stroke-width="3"/>
+          </g>
+        </svg>
+      </nav>
+    </div>
+      <!-- ハンバーガーメニュー -->
+    <div class="header__humberger-menu humberger-menu" id="humberger-menu">
+      <svg  class="humberger-menu__close-button" id="close-button" xmlns="http://www.w3.org/2000/svg" width="23.335" height="23.335" viewBox="0 0 23.335 23.335">
+        <path id="パス_2" data-name="パス 2" d="M6688.771-1384.758h30" transform="translate(3772.777 -5707.786) rotate(135)" fill="none" stroke="#fffdfd" stroke-width="3"/>
+        <path id="パス_4" data-name="パス 4" d="M6688.771-1384.758h30" transform="translate(-5707.785 -3749.443) rotate(45)" fill="none" stroke="#fff" stroke-width="3"/>
+      </svg>  
+      <ul class="humberger-menu__list">
+        <li class="humberger-menu__link"><a href="#concept">Concept</a></li>
+        <li class="humberger-menu__link"><a href="#service">Service</a></li>
+        <li class="humberger-menu__link"><a href="#works">Works</a></li>
+        <li class="humberger-menu__link"><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </header>
   <main>
     <!-- トップ画像 -->
@@ -49,16 +52,20 @@
         <span class="jumbotron__slider-item jumbotron-slider__image3"></span>
         <span class="jumbotron__slider-item jumbotron-slider__image1"></span>
       </div>
-      <p class="jumbotron__text-en">Design for Smile.</p>
-      <p class="jumbotron__text-jp">快適なオフィスを<br class="jumbotron__br-sp">デザインする</p>
+      <div class="jumbotron__main-copy">
+        <p class="jumbotron__text-en">Design for Smile.</p>
+        <p class="jumbotron__text-jp">快適なオフィスを<br class="jumbotron__br-sp">デザインする</p>
+      </div>
     </div>
     <!-- コンセプト -->
     <section id="concept" class="concept">
-      <h2 class="concept__title">CONCEPT</h2>
-      <p class="concept__sub-title">“働きたくなる空間”をデザインする<br class="concept__br-sp">ことで<br class="concept__br">人々を幸せにする。</p>
-      <div class="concept__flex">
-        <p class="concept__text">私たちは、オフィスに特化した空間デザイン専門としております。その理由は、「働きたくなる空間で仕事ができれば多くの人を幸せにできるのではないか」と考えるためです。そんな想いの株式会社Cresta Designだからこそできる空間デザインを提供させていただきます。</p>
-        <img src="img\concept-image@2x.jpg" alt="広い空間と木の机" class="concept__img">
+      <div class="concept__inner">
+        <h2 class="concept__title">CONCEPT</h2>
+        <p class="concept__sub-title">“働きたくなる空間”をデザインする<br class="concept__br-sp">ことで<br class="concept__br">人々を幸せにする。</p>
+        <div class="concept__flex">
+          <p class="concept__text">私たちは、オフィスに特化した空間デザイン専門としております。その理由は、「働きたくなる空間で仕事ができれば多くの人を幸せにできるのではないか」と考えるためです。そんな想いの株式会社Cresta Designだからこそできる空間デザインを提供させていただきます。</p>
+          <img src="./img/concept-image@2x.jpg" alt="広い空間と木の机" class="concept__img">
+        </div>
       </div>
       <p class="concept__background-text">Our Concept</p>
     </section>
@@ -68,24 +75,24 @@
       <ul class="works__flex">
         <li class="works__item works-card">
           <a href="#">
-          <img src="img\card-img01@2x.jpg" alt="オフィスで人が働く様子" class="works-card__img">
-          <p class="works-card__text">新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
+            <img src="./img/card-img01@2x.jpg" alt="オフィスで人が働く様子" class="works-card__img">
+            <p class="works-card__text">新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
           </a>
         </li>
         <li class="works__item works-card">
           <a href="#">
-          <img src="img\card-img02@2x.jpg"" alt="日光が射し込む会議室" class="works-card__img">
-          <p class="works-card__text">新規サイトを公開しました。今回のサイトは白と黒を基調にした</p>
+            <img src="./img/card-img02@2x.jpg"" alt="日光が射し込む会議室" class="works-card__img">
+            <p class="works-card__text">新規サイトを公開しました。今回のサイトは白と黒を基調にした</p>
           </a>
         </li>
         <li class="works__item works-card">
           <a href="#">
-          <img src="img\card-img03@2x.jpg" alt="椅子で囲われたリフレッシュスペース" class="works-card__img">
-          <p class="works-card__text">新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
+            <img src="./img/card-img03@2x.jpg" alt="椅子で囲われたリフレッシュスペース" class="works-card__img">
+            <p class="works-card__text">新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
           </a>
         </li>
       </ul>
-      <button class="works__button"><a href="#">View more</a></button>
+      <a href="#"><button class="works__button">View more</button></a>
       <p class="works__background-text">Our Works</p>
     </section>
     <!-- サービス -->
@@ -93,19 +100,19 @@
       <h2 class="service__title">Service</h2>
       <ul class="service__flex">
         <li class="service__link  service-card">
-          <a href="#">
+          <a href="#" class="service-card__anker">
             <img src="img/service-img01@2x.jpg" alt="パソコンを突き合わせて会議" class="service-card__img">
             <p class="service-card__text">Hearing</p>
           </a>
         </li>
         <li class="service__link  service-card">
-          <a href="#">
+          <a href="#" class="service-card__anker">
             <img src="img/service-img02@2x.jpg" alt="ポストイットを使った会議" class="service-card__img">
             <p class="service-card__text">Planning</p>
           </a>
         </li>
         <li class="service__link  service-card">
-          <a href="#">
+          <a href="#" class="service-card__anker">
             <img src="img/sevice-img03@2x.jpg" alt="木の机とペンを持った腕" class="service-card__img">
             <p class="service-card__text">Direction</p>
           </a>
@@ -117,13 +124,13 @@
     <section id="contact" class="contact">
       <h2 class="contact__title">Contact</h2>
       <p class="contact__text">お気軽にご相談ください。</p>
-      <button class="contact__button"><a href="contact/index.html">Contact</a></button>
+      <a href="./contact/"><button class="contact__button">Contact</button></a>
       <p class="contact__background-text">Contact us</p>
     </section>
   </main>
   <!-- フッター -->
   <footer class="footer">
-    <p class="footer__text">©︎cresta.design all rights reserved</p>
+    <small class="footer__text">&copy;cresta.design all rights reserved</small>
   </footer>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/humberger.js"></script>
