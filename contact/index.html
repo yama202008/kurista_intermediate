@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="../css/stylesheet.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+
+  <!-- Formrunテスト -->
+  <script src="https://sdk.form.run/js/v2/formrun.js"></script>
+
 </head>
 <body>
   <!-- ヘッダー -->
@@ -50,7 +54,7 @@
       <p class="contact-jumbotron__background-text">Contact us</p>
     </div>
     <!-- コンタクトフォーム -->
-    <form action="#" class="contact-form">
+    <!-- <form action="#" class="contact-form">
       <p class="contact-form__label">お問い合わせ内容</p>
       <div class="contact-form__flex">
         <label for="kind1" class="contact-form__choice">
@@ -75,8 +79,43 @@
       <label for="other" class="contact-form__label">その他</label>
       <textarea name="other" id="other" class="contact-form__text"></textarea>
       <input type="submit" value="Submit" class="contact-form__submit">
-    </form>
-    <script src="https://sdk.form.run/js/v2/formrun.js"></script>
+    </form> -->
+
+    <!-- class, action, methodを変更しないでください -->
+<form class="formrun" action="https://form.run/api/v1/r/yz9dtnopspwb3lfsdkw9s247" method="post">
+  <!-- ↓自由に要素を追加・編集することができます -->
+  <div>
+    <label>お名前</label>
+    <input name="お名前" type="text">
+  </div>
+
+  <div>
+    <label>メールアドレス [必須]</label>
+    <input name="メールアドレス" type="text" data-formrun-type="email" data-formrun-required>
+    <div data-formrun-show-if-error="メールアドレス">メールアドレスを正しく入力してください</div>
+  </div>
+
+  <div>
+    <label>お問い合わせ [必須]</label>
+    <textarea name="お問い合わせ" data-formrun-required></textarea>
+    <div data-formrun-show-if-error="お問い合わせ">お問い合わせ入力してください</div>
+  </div>
+
+  <div>
+    <label>個人情報利用同意 [必須]</label>
+    <input type="checkbox" name="個人情報利用同意" data-formrun-required>
+    <div data-formrun-show-if-error="個人情報利用同意">同意してください</div>
+  </div>
+
+  <!-- ボット投稿をブロックするためのタグ -->
+  <div class="_formrun_gotcha">
+    <style media="screen">._formrun_gotcha {position:absolute!important;height:1px;width:1px;overflow:hidden;}</style>
+    <label for="_formrun_gotcha">If you are a human, ignore this field</label>
+    <input type="text" name="_formrun_gotcha" id="_formrun_gotcha" tabindex="-1">
+  </div>
+
+  <button type="submit" data-formrun-error-text="未入力の項目があります" data-formrun-submitting-text="送信中...">送信</button>
+</form>
   </main>
   <!-- フッター -->
   <footer class="footer">
