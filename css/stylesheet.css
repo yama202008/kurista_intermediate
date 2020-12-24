@@ -571,8 +571,6 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-width: 144rem;
-  margin: 0 auto;
   padding: 2.4rem 12rem;
 }
 
@@ -717,6 +715,8 @@ html {
 
 .jumbotron__main-copy {
   position: absolute;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   width: 100%;
   bottom: 17.2rem;
   left: 12rem;

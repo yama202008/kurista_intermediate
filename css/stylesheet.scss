@@ -15,9 +15,9 @@
   &__inner {
     display: flex;
     justify-content: space-between;
-    max-width: 144rem;
-    margin: 0 auto;
-    padding: 2.4rem $padding ;
+    // max-width: 144rem;
+    // margin: 0 auto;
+    padding: 2.4rem $padding;
     @include sp {
       padding: 3rem $padding-sp;
     }
@@ -135,6 +135,7 @@
   }
   &__main-copy {
     position: absolute;
+    box-sizing: content-box;
     width: 100%;
     bottom: 17.2rem;
     left: $padding;
