@@ -135,8 +135,8 @@
   }
   &__main-copy {
     position: absolute;
-    box-sizing: content-box;
-    width: 100%;
+    // box-sizing: content-box;
+    // width: 100%;
     bottom: 17.2rem;
     left: $padding;
     @include sp {

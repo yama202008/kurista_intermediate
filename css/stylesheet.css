@@ -715,9 +715,6 @@ html {
 
 .jumbotron__main-copy {
   position: absolute;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  width: 100%;
   bottom: 17.2rem;
   left: 12rem;
 }
